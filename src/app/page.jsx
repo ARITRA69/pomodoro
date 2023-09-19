@@ -115,7 +115,15 @@ export default function Home() {
     return () => {
       clearInterval(timer);
     };
-  }, [seconds, pomodoro, shortBreak, longBreak, ticking]);
+  }, [
+    seconds,
+    pomodoro,
+    shortBreak,
+    longBreak,
+    ticking,
+    clockTicking,
+    consumedSecond,
+  ]);
 
   return (
     <div className="min-h-screen ">
