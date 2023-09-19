@@ -15,6 +15,7 @@ function About() {
       <Link
         href="https://github.com/ARITRA69/pomodoro.git"
         className="flex items-center justify-center px-3 py-1 border border-opacity-0 hover:border-[#D65A31] duration-300 rounded-lg"
+        target="_blank"
       >
         <Github color="#D65A31" />
         Source Code
