@@ -8,5 +8,6 @@ const Alarm = React.forwardRef((_, ref) => {
     </audio>
   );
 });
+Alarm.displayName = "Alarm";
 
 export default React.memo(Alarm);

@@ -108,22 +108,14 @@ export default function Home() {
     const timer = setInterval(() => {
       if (ticking) {
         setConsumedSecond((value) => value + 1);
-        clockTicking();
+        clockTicking(() => {});
       }
     }, 1000);
 
     return () => {
       clearInterval(timer);
     };
-  }, [
-    seconds,
-    pomodoro,
-    shortBreak,
-    longBreak,
-    ticking,
-    clockTicking,
-    consumedSecond,
-  ]);
+  }, [seconds, pomodoro, shortBreak, longBreak, ticking]);
 
   return (
     <div className="min-h-screen ">
