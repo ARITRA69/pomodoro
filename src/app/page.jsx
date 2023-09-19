@@ -75,7 +75,7 @@ export default function Home() {
     alarmRef.current.play();
   };
 
-  const clockTickings = () => {
+  const clockTicking = () => {
     const minutes = getTickingTime();
     const setMinutes = updateMinutes();
 
@@ -102,16 +102,17 @@ export default function Home() {
 
   useEffect(() => {
     window.onbeforeunload = () => {
-      return consumedSecond ? "Show warning" : null;
+      return consumedSecond ? "Show waring" : null;
     };
 
     const timer = setInterval(() => {
       if (ticking) {
-        clockTickings();
+        setConsumedSecond((value) => value + 1);
+        clockTicking();
       }
     }, 1000);
+
     return () => {
-      setConsumedSecond((value) => value + 1);
       clearInterval(timer);
     };
   }, [seconds, pomodoro, shortBreak, longBreak, ticking]);
